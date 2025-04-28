@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brincando com Você!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            background-color: #e0e7e6;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: #ffe414;
+        }
+        h1 {
+            color: #e7ff14c3;
+        }
+        .resposta {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #ffea47;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brincando contigo</h1>
+    <p>Oi, amor! Vou te fazer algumas perguntinhas, ok?</p>
+    <button onclick="perguntar()">Começar!</button>
+
+    <div id="resposta" class="resposta"></div>
+
+    <script>
+        function perguntar() {
+            let resposta1 = prompt("Você me ama? (sim/nao)");
+
+            if (resposta1 && resposta1.toLowerCase() === "sim") {
+                document.getElementById("resposta").innerHTML = "Eu tbm me amo! ";
+            } else {
+                document.getElementById("resposta").innerHTML = "Ta chapando fia? oxe ";
+            }
+
+            setTimeout(() => {
+                let resposta2 = prompt("Você gostaria de passar o dia deitadinha comigo? (sim/nao)");
+
+                if (resposta2 && resposta2.toLowerCase() === "sim") {
+                    document.getElementById("resposta").innerHTML += "<br>Eu tbm amo veyrrrr 😘";
+                } else {
+                    document.getElementById("resposta").innerHTML += "<br>Tudo bem, morra!";
+                }
+
+                setTimeout(() => {
+                    let resposta3 = prompt("Qual é o meu apelido?");
+
+                    if (resposta3 && resposta3.toLowerCase().includes("amor")) {
+                        document.getElementById("resposta").innerHTML += "<br>Acertou cachorra ";
+                    } else {
+                        document.getElementById("resposta").innerHTML += "<br>Acho que vou deixar vc tentar de novo depois!";
+                    }
+
+                    setTimeout(() => {
+                        document.getElementById("resposta").innerHTML += "<br>Gostou das perguntas? Te amo muito! Agora da a bct obs:espera 3s 💖";
+
+                        // Depois de mais 3 segundos, redireciona para o YouTube
+                        setTimeout(() => {
+                            window.location.href = "https://youtu.be/vJo6UzbEWEM?si=GVQ_J1jZezJCJLfw"; // Troque aqui o link para a música que quiser
+                        }, 3000);
+
+                    }, 1500);
+                }, 2000);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
